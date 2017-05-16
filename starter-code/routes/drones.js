@@ -1,9 +1,11 @@
 /* jshint esversion:6 */
+// require express functions
 const express = require('express');
 
 // require the Drone model here
 const Drones = require('../models/drone');
 
+//require the router of express
 const router = express.Router();
 
 
@@ -37,6 +39,13 @@ router.post('/drones', (req, res, next) => {
 
 
 router.get('/drones/:id', (req, res, next) => {
+  //res.send('llegamos a route of info drones');
+  const droneId=req.params.id;
+  Drones.findById(droneId,(err,drone)=>{
+    if (err) return next(err);
+    res.render('drones/drone',{drone});
+
+  });
   // Iteration #3
 });
 
