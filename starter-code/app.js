@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+//drones routes
 const drones = require('./routes/drones');
 
 mongoose.connect('mongodb://localhost/drones-dev');
@@ -21,7 +22,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(expressLayouts);
-app.locals.title = 'Drnz';
+//app.locals.title = 'Drnz';
+app.locals.title = 'Drones danger!';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -33,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+// Wire the drones routes with the app
 app.use('/', drones);
 
 // catch 404 and forward to error handler

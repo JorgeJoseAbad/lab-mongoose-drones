@@ -9,9 +9,11 @@ const droneData = [
 // bin/seeds.js
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/drones-dev');
-const Drone = require('../models/drone');
+const Drone = require('../models/drone');  //Drone is a Model, based on Schema drone
 
 // bin/seeds.js
+//from the nongoose API: Model.create(doc(s), [callback])
+//Shortcut for saving one or more documents to the database.
 Drone.create(droneData, (err, docs) => {
   if (err) { throw err; }
   docs.forEach( (docs) => {

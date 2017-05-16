@@ -18,13 +18,21 @@ router.get('/drones', (req, res, next) => {
   });
 
 
-
 router.get('/drones/new', (req, res, next) => {
-  // Iteration #4
+  res.render('drones/new-drone', {
+    title: 'Add a new drone'
+  });
 });
 
 router.post('/drones', (req, res, next) => {
   // Iteration #4
+  //res.send('llegamos a route of guardar drones');
+  const body = req.body;
+  const newDrone = new Drones(body);
+  newDrone.save(function (err, doc) {
+    if (err) return next(err);
+    res.redirect('/drones');
+  });
 });
 
 
