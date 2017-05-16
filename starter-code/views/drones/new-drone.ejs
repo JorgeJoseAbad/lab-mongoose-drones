@@ -1,14 +1,24 @@
-<form class="newdrone" action="/drones" method="post">
+<span class="glyphicon glyphicon-plus">News drones</span>
+<br>
+<div class="row">
+  <form class="newdrone" action="/drones" method="post">
 
-  <label for="droneName">Drone Name</label>
-  <input type="text" name="droneName" value="droneName">
+    <div class="col-md-6">
+      <label for="droneName">Drone Name</label>
+      <input id="droneName" type="text" name="droneName" value="droneName">
+    </div>
 
-  <label for="propellers">Propellers</label>
-  <input type="text" name="propellers" value="propellers">
+    <div class="col-md-6">
+      <label for="propellers">Propellers</label>
+      <input id="propellers" type="number" name="propellers" value=1>
+    </div>
+    <div class="col-md-6">
+      <label for="maxSpeed">Max speed</label>
+      <input id="maxSpeed" type="number" name="maxSpeed" value=100>
+    </div>
 
-  <label for="maxSpeed"></label>
-  <input type="text" name="maxSpeed" value="maxSpeed">
-
-  <button type="submit">Save new drone</button>
-
-</form>
+    <div class="col-md-4">
+      <button type="submit">Save new drone</button>
+    </div>
+  </form>
+</div>
